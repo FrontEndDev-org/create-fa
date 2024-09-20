@@ -1,0 +1,46 @@
+{
+  "name": "create-fa",
+  "version": "1.0.0",
+  "description": "create (F)ront-end (A)pplication - npm create fa",
+  "scripts": {
+    "check": "biome check --write"
+  },
+  "sideEffects": false,
+  "module": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs",
+        "types": "./dist/index.d.ts"
+      },
+      "./sub": {
+        "import": "./dist/sub/index.mjs",
+        "require": "./dist/sub/index.cjs",
+        "types": "./dist/sub/index.d.ts"
+      },
+      "./package.json": "./package.json"
+    },
+    "types": "./dist/index.d.ts",
+    "typesVersions": {
+      "*": {
+        "sub": [
+          "./dist/sub.d.ts"
+        ]
+      }
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.2",
+    "@types/node": "^22.5.5",
+    "typescript": "^5.6.2"
+  }
+}
