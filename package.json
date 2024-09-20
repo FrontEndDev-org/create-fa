@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "create (F)ront-end (A)pplication - npm create fa",
   "scripts": {
+    "prepare": "lefthook install",
     "check": "biome check --write"
   },
   "sideEffects": false,
   "module": "./src/index.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "main": "./dist/index.cjs",
     "module": "./dist/index.mjs",
@@ -29,9 +28,7 @@
     "types": "./dist/index.d.ts",
     "typesVersions": {
       "*": {
-        "sub": [
-          "./dist/sub.d.ts"
-        ]
+        "sub": ["./dist/sub.d.ts"]
       }
     }
   },
@@ -40,7 +37,11 @@
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.9.2",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
     "@types/node": "^22.5.5",
+    "lefthook": "^1.7.15",
     "typescript": "^5.6.2"
   }
 }
