@@ -1,0 +1,51 @@
+name: release please
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    needs: release
+    if: needs.release.outputs.release_created
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-npm
+      - run: pnpm run build
+      - uses: FrontEndDev-org/publish-node-package-action@v2
+        with:
+          target: npm
+          token: ${{ secrets.NPM_TOKEN }}
+      - uses: FrontEndDev-org/npm-mirror-sync-action@v1
+
+  publish-github:
+    needs: release
+    if: needs.release.outputs.release_created
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-npm
+      - run: pnpm run build
+      - uses: FrontEndDev-org/publish-node-package-action@v2
+        with:
+          target: github
+          token: ${{ secrets.GITHUB_TOKEN }}
