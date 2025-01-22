@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["package-lock.json", "pnpm-lock.{yml,yaml}"]
+    "ignore": [".*", "package.json", "package-lock.json", "pnpm-lock.{yml,yaml}", "templates"]
   },
   "formatter": {
     "enabled": true,

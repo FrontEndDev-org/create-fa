@@ -1,47 +1,59 @@
 {
   "name": "create-fa",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "create (F)ront-end (A)pplication - npm create fa",
   "scripts": {
     "prepare": "lefthook install",
-    "check": "biome check --write"
+    "lint": "biome check",
+    "lint:fix": "biome check --fix",
+    "build": "NODE_ENV=production vite build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "sideEffects": false,
-  "module": "./src/index.ts",
-  "files": ["dist"],
-  "publishConfig": {
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.mjs",
-    "exports": {
-      ".": {
-        "import": "./dist/index.mjs",
-        "require": "./dist/index.cjs",
-        "types": "./dist/index.d.ts"
-      },
-      "./sub": {
-        "import": "./dist/sub/index.mjs",
-        "require": "./dist/sub/index.cjs",
-        "types": "./dist/sub/index.d.ts"
-      },
-      "./package.json": "./package.json"
-    },
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-      "*": {
-        "sub": ["./dist/sub.d.ts"]
-      }
-    }
+  "main": "./dist/index.cjs",
+  "bin": {
+    "create-fa": "./bin/index.cjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "keywords": [
+    "create-creator",
+    "create-fa"
+  ],
+  "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontenddev-org/create-fa.git"
+  },
+  "dependencies": {
+    "create-creator": "^2.3.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.2",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/types": "^19.5.0",
-    "@types/node": "^22.5.5",
-    "lefthook": "^1.7.15",
-    "typescript": "^5.6.2"
+    "@types/node": "^22.10.7",
+    "lefthook": "^1.10.10",
+    "taze": "^18.3.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-externalize-deps": "^0.9.0",
+    "vitest": "^3.0.3"
   }
 }
