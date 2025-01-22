@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 pa-4">
+    <div className="flex flex-col gap-4 py-10 items-center">
       <h1 className="text-4xl mb-3">
         Component randomNumber =
         {number}

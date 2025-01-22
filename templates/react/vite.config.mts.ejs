@@ -4,12 +4,7 @@
  */
 
 import path from "node:path";
-<%_ if (ctx.templateName === 'react') { _%>
 import react from "@vitejs/plugin-react";
-<%_ } else if (ctx.templateName === 'vue') { _%>
-import vue from "@vitejs/plugin-vue";
-import jsx from "@vitejs/plugin-vue-jsx";
-<%_ } _%>
 import uno from "unocss/vite";
 import { defineConfig } from "vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
@@ -52,12 +47,7 @@ export default defineConfig((env) => {
       },
     },
     plugins: [
-      <%_ if (ctx.templateName === 'react') { _%>
       react(),
-      <%_ } else if (ctx.templateName === 'vue') { _%>
-      vue(),
-      jsx(),
-      <%_ } _%>
       uno(),
       createSvgIconsPlugin({
         iconDirs: [path.resolve("src/svg-icons")],
