@@ -1,0 +1,77 @@
+/**
+ * @file vite.config.mts
+ * @ref https://vitejs.dev/
+ */
+
+import path from "node:path";
+<%_ if (ctx.templateName === 'react') { _%>
+import react from "@vitejs/plugin-react";
+<%_ } else if (ctx.templateName === 'vue') { _%>
+import vue from "@vitejs/plugin-vue";
+import jsx from "@vitejs/plugin-vue-jsx";
+<%_ } _%>
+import uno from "unocss/vite";
+import { defineConfig } from "vite";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
+import pkg from "./package.json";
+
+export default defineConfig((env) => {
+  const isTest = env.mode === "test";
+
+  return {
+    server: {
+      port: 15170,
+    },
+    preview: {
+      port: 15171,
+    },
+    define: {
+      PKG_NAME: JSON.stringify(isTest ? "pkg-name-for-test" : pkg.name),
+      PKG_VERSION: JSON.stringify(isTest ? "pkg-version-for-test" : pkg.version),
+      PKG_DESCRIPTION: JSON.stringify(isTest ? "pkg-description-for-test" : pkg.description),
+    },
+    build: {
+      rollupOptions: {
+        input: {
+          index: path.resolve("index.html"),
+        },
+        output: {
+          assetFileNames: "assets/[hash][extname]",
+          chunkFileNames: "assets/[hash].js",
+          entryFileNames: "assets/[hash].js",
+        },
+      },
+    },
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+    experimental: {
+      renderBuiltUrl(filename, { type }) {
+        return new URL(filename, "https://cdn.example.com").toString();
+      },
+    },
+    plugins: [
+      <%_ if (ctx.templateName === 'react') { _%>
+      react(),
+      <%_ } else if (ctx.templateName === 'vue') { _%>
+      vue(),
+      jsx(),
+      <%_ } _%>
+      uno(),
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve("src/svg-icons")],
+        symbolId: "icon-[dir]/[name]",
+      }),
+      ViteMinifyPlugin({
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+      }),
+    ],
+  };
+});
