@@ -3,7 +3,7 @@
  * @ref https://vitejs.dev/
  */
 
-import path from 'node:path';
+import path from 'node:path/posix';
 import react from '@vitejs/plugin-react';
 import uno from 'unocss/vite';
 import { defineConfig } from 'vite';
@@ -36,7 +36,7 @@ export default defineConfig((env) => {
           index: path.resolve('index.html'),
         },
         output: {
-          assetFileNames: 'assets/[hash][ext]',
+          assetFileNames: 'assets/[hash].[ext]',
           chunkFileNames: 'assets/[hash].js',
           entryFileNames: 'assets/[hash].js',
         },
@@ -50,7 +50,7 @@ export default defineConfig((env) => {
       react(),
       uno(),
       createSvgSpritePlugin({
-        iconDirs: [path.resolve('src/svg-icons')],
+        iconDirs: path.resolve('src/svg-icons'),
         symbolId: 'icon-[dir]/[name]',
       }),
       ViteMinifyPlugin({
