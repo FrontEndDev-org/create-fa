@@ -37,4 +37,5 @@ node_modules
 # typescript
 *.tsbuildinfo
 
-
+# React Router
+/.react-router/

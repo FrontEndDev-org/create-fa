@@ -4,11 +4,12 @@
  */
 
 import path from "node:path";
-import react from "@vitejs/plugin-react";
+import { reactRouter } from '@react-router/dev/vite';
 import uno from "unocss/vite";
 import { defineConfig } from "vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
+import tsconfigPaths from 'vite-tsconfig-paths';
 import pkg from "./package.json";
 
 export default defineConfig((env) => {
@@ -26,18 +27,6 @@ export default defineConfig((env) => {
       PKG_VERSION: JSON.stringify(isTest ? "pkg-version-for-test" : pkg.version),
       PKG_DESCRIPTION: JSON.stringify(isTest ? "pkg-description-for-test" : pkg.description),
     },
-    build: {
-      rollupOptions: {
-        input: {
-          index: path.resolve("index.html"),
-        },
-        output: {
-          assetFileNames: "assets/[hash][extname]",
-          chunkFileNames: "assets/[hash].js",
-          entryFileNames: "assets/[hash].js",
-        },
-      },
-    },
     esbuild: {
       drop: ['console', 'debugger'],
     },
@@ -47,7 +36,8 @@ export default defineConfig((env) => {
       },
     },
     plugins: [
-      react(),
+      tsconfigPaths(),
+      reactRouter(),
       uno(),
       createSvgIconsPlugin({
         iconDirs: [path.resolve("src/svg-icons")],

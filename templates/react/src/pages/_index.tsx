@@ -1,15 +1,16 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSnapshot } from 'valtio';
-import { sampleStore } from './store/sample';
-import SvgIcon from './svg-icons';
+import { sampleStore } from '../store/sample';
+import SvgIcon from '../svg-icons';
 
-export default function App() {
+export default function Index() {
   const [number, setNumber] = useState(0);
   const sample = useSnapshot(sampleStore);
   const changeNumber = () => {
     const randomNumber = Math.random();
     setNumber(randomNumber);
     sampleStore.randomNumber = randomNumber;
+    console.log('randomNumber is', randomNumber);
   };
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
