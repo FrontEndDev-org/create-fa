@@ -3,19 +3,21 @@
  * @ref https://vitejs.dev/
  */
 
-import path from "node:path";
-import { reactRouter } from '@react-router/dev/vite';
-import uno from "unocss/vite";
-import { defineConfig } from "vite";
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import { ViteMinifyPlugin } from "vite-plugin-minify";
+import path from 'node:path';
+import react from '@vitejs/plugin-react';
+import uno from 'unocss/vite';
+import { defineConfig } from 'vite';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import { createSvgSpritePlugin } from 'vite-svg-sprite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import pkg from "./package.json";
+import pkg from './package.json';
 
 export default defineConfig((env) => {
-  const isTest = env.mode === "test";
+  const isProd = env.mode === 'production';
+  const isTest = env.mode === 'test';
 
   return {
+    base: '/',
     server: {
       port: 15170,
     },
@@ -23,25 +25,32 @@ export default defineConfig((env) => {
       port: 15171,
     },
     define: {
-      PKG_NAME: JSON.stringify(isTest ? "pkg-name-for-test" : pkg.name),
-      PKG_VERSION: JSON.stringify(isTest ? "pkg-version-for-test" : pkg.version),
-      PKG_DESCRIPTION: JSON.stringify(isTest ? "pkg-description-for-test" : pkg.description),
+      PKG_NAME: JSON.stringify(isTest ? 'pkg-name-for-test' : pkg.name),
+      PKG_VERSION: JSON.stringify(isTest ? 'pkg-version-for-test' : pkg.version),
+      PKG_DESCRIPTION: JSON.stringify(isTest ? 'pkg-description-for-test' : pkg.description),
+    },
+    build: {
+      rollupOptions: {
+        input: {
+          index: path.resolve('index.html'),
+        },
+        output: {
+          assetFileNames: 'assets/[hash][ext]',
+          chunkFileNames: 'assets/[hash].js',
+          entryFileNames: 'assets/[hash].js',
+        },
+      },
     },
     esbuild: {
-      drop: ['console', 'debugger'],
-    },
-    experimental: {
-      renderBuiltUrl(filename, { type }) {
-        return new URL(filename, "https://cdn.example.com").toString();
-      },
+      drop: isProd ? ['console', 'debugger'] : [],
     },
     plugins: [
       tsconfigPaths(),
-      reactRouter(),
+      react(),
       uno(),
-      createSvgIconsPlugin({
-        iconDirs: [path.resolve("src/svg-icons")],
-        symbolId: "icon-[dir]/[name]",
+      createSvgSpritePlugin({
+        iconDirs: [path.resolve('src/svg-icons')],
+        symbolId: 'icon-[dir]/[name]',
       }),
       ViteMinifyPlugin({
         minifyCSS: true,
@@ -53,5 +62,10 @@ export default defineConfig((env) => {
         removeStyleLinkTypeAttributes: true,
       }),
     ],
+    // experimental: {
+    //   renderBuiltUrl(filename, { type }) {
+    //     return new URL(filename, 'https://cdn.example.com').toString();
+    //   },
+    // },
   };
 });

@@ -1,5 +1,5 @@
 import { proxy } from 'valtio';
 
 export const sampleStore = proxy({
-  randomNumber: 0,
+  randomNumber: Math.random(),
 });
