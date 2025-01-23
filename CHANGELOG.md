@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/FrontEndDev-org/create-fa/compare/v1.1.0...v1.2.0) (2025-01-23)
+
+
+### Miscellaneous Chores
+
+* release 1.2.0 ([59b7065](https://github.com/FrontEndDev-org/create-fa/commit/59b70653da45eba1a3e2c4043f824041fbd04bc1))
+
 ## [1.1.0](https://github.com/FrontEndDev-org/create-fa/compare/v1.0.0...v1.1.0) (2025-01-23)
 
 
