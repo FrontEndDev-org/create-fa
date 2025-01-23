@@ -1,9 +1,12 @@
+# 如果 devPR 到主干，则会根据约定式提交创建一个 releasePR，是一个新版本合并请求
+# 如果 releasePR 到主干，则会触发新版本发布到 npm/github 等仓库
+
 name: release please
 
 on:
   push:
     branches:
-      - main
+      - v*.x
 
 jobs:
   release:
@@ -17,7 +20,7 @@ jobs:
       - uses: googleapis/release-please-action@v4
         id: release
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{secrets.GITHUB_TOKEN}}
 
   publish-npm:
     needs: release
@@ -27,8 +30,9 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-npm
-      - run: pnpm run build
+      - uses: ./.github/actions/setup-nvm
+      - run: npm ci
+      - run: npm run build
       - uses: FrontEndDev-org/publish-node-package-action@v2
         with:
           target: npm
@@ -43,9 +47,10 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-npm
-      - run: pnpm run build
-      - uses: FrontEndDev-org/publish-node-package-action@v2
+      - uses: ./.github/actions/setup-nvm
+      - run: npm ci
+      - run: npm run build
+      - uses: FrontEndDev-org/publish-node-package-action@v2.5
         with:
           target: github
           token: ${{ secrets.GITHUB_TOKEN }}
