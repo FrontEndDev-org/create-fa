@@ -1,6 +1,6 @@
 {
   "name": "create-fa",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "create (F)ront-end (A)pplication - npm create fa",
   "scripts": {
     "prepare": "lefthook install",
