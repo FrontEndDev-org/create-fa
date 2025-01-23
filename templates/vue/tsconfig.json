@@ -23,7 +23,7 @@
   },
 
   "include": ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.vue"],
-  "exclude": ["dist"]
+  "exclude": []
 }
 
 
