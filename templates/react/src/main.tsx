@@ -7,7 +7,7 @@ import './main.scss';
 import { router } from './router';
 
 // biome-ignore lint/style/noNonNullAssertion: <explanation>
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('app')!).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
