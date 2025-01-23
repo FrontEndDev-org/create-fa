@@ -22,7 +22,7 @@
     "plugins": []
   },
   "include": ["**/*.ts", "**/*.mts", "**/*.tsx"],
-  "exclude": ["dist"]
+  "exclude": []
 }
 
 
