@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { sampleStore } from '../store/sample';
-import SvgIcon from '../svg-icons';
+import SvgIcon from '../svg-icons/SvgIcon';
 
 export default function Index() {
   const sample = useSnapshot(sampleStore);

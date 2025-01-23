@@ -21,7 +21,8 @@
     "types": ["node"],
     "plugins": []
   },
-  "include": ["src", "test", "*.ts", "*.mts"]
+  "include": ["**/*.ts", "**/*.mts", "**/*.tsx"],
+  "exclude": ["dist"]
 }
 
 

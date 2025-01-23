@@ -36,7 +36,7 @@ export default function App() {
           href="javascript:;"
           className="px-2 py-1 rounded hover:bg-gray-300 dark:hover:bg-gray-500"
           onClick={() => {
-            navigate(`/not-found-${Math.random()}`);
+            navigate(`/404-${Math.random()}`);
           }}
         >
           404

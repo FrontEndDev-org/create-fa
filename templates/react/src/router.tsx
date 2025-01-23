@@ -1,8 +1,6 @@
 import { createElement, lazy } from 'react';
 import { createHashRouter } from 'react-router';
 
-console.log('base', import.meta.env.BASE_URL);
-
 export const router = createHashRouter(
   [
     {
@@ -24,6 +22,6 @@ export const router = createHashRouter(
     },
   ],
   {
-    basename: import.meta.env.BASE_URL || '/',
+    basename: import.meta.env.BASE_URL,
   },
 );
