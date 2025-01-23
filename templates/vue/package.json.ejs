@@ -1,0 +1,58 @@
+{
+  "name": "<%= ctx.projectName %>",
+  "version": "1.0.0",
+  "description": "A new Vue App - <%= ctx.projectName %>",
+  "scripts": {
+    "prepare": "lefthook install",
+    <%_ if (codeLinter === 'biome') { _%>
+    "lint": "biome check && tsc --noEmit",
+    "lint:fix": "biome check --fix --unsafe && tsc --noEmit",
+    <%_ } else if (codeLinter === 'eslint') { _%>
+    "lint": "eslint && tsc --noEmit",
+    "lint:fix": "eslint --fix && tsc --noEmit",
+    <%_ } _%>
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "cross-env NODE_ENV=production vite preview",
+    "release": "commit-and-tag-version"
+  },
+  "engines": {
+    "node": ">=<%= nodeVersion %>"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "@unocss/reset": "^65.4.3",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    <%_ if (codeLinter === 'biome') { _%>
+    "@biomejs/biome": "1.9.4",
+    <%_ } else if (codeLinter === 'eslint') { _%>
+    "@antfu/eslint-config": "^3.14.0",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    <%_ } _%>
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/types": "^19.5.0",
+    "@types/node": "<%= nodeVersion %>",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "commit-and-tag-version": "^12.5.0",
+    "cross-env": "^7.0.3",
+    "lefthook": "^1.10.3",
+    "sass-embedded": "^1.83.4",
+    "typescript": "^5.7.3",
+    "unocss": "^65.4.0",
+    "unplugin-vue-router": "^0.11.1",
+    "vite": "^6.0.7",
+    "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-minify": "^2.1.0",
+    "vite-svg-sprite": "^1.0.1",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}

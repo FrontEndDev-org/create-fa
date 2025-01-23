@@ -1,0 +1,78 @@
+/**
+ * @file vite.config.mts
+ * @ref https://vitejs.dev/
+ */
+
+import path from 'node:path';
+import vue from '@vitejs/plugin-vue';
+import jsx from '@vitejs/plugin-vue-jsx';
+import uno from 'unocss/vite';
+import { defineConfig } from 'vite';
+import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import { createSvgSpritePlugin } from 'vite-svg-sprite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import pkg from './package.json';
+
+export default defineConfig((env) => {
+  const isProd = env.mode === 'production';
+  const isTest = env.mode === 'test';
+
+  return {
+    base: '/',
+    server: {
+      port: 15170,
+    },
+    preview: {
+      port: 15171,
+    },
+    define: {
+      PKG_NAME: JSON.stringify(isTest ? 'pkg-name-for-test' : pkg.name),
+      PKG_VERSION: JSON.stringify(isTest ? 'pkg-version-for-test' : pkg.version),
+      PKG_DESCRIPTION: JSON.stringify(isTest ? 'pkg-description-for-test' : pkg.description),
+    },
+    build: {
+      rollupOptions: {
+        input: {
+          index: path.resolve('index.html'),
+        },
+        output: {
+          assetFileNames: 'assets/[hash][ext]',
+          chunkFileNames: 'assets/[hash].js',
+          entryFileNames: 'assets/[hash].js',
+        },
+      },
+    },
+    esbuild: {
+      drop: isProd ? ['console', 'debugger'] : [],
+    },
+    plugins: [
+      tsconfigPaths(),
+      vue(),
+      jsx(),
+      uno(),
+      createSvgSpritePlugin({
+        iconDirs: [path.resolve('src/svg-icons')],
+        symbolId: 'icon-[dir]/[name]',
+      }),
+      ViteMinifyPlugin({
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+      }),
+      ViteEjsPlugin({
+        PKG_NAME: pkg.name,
+        PKG_VERSION: pkg.version,
+      }),
+    ],
+    // experimental: {
+    //   renderBuiltUrl(filename, { type }) {
+    //     return new URL(filename, 'https://cdn.example.com').toString();
+    //   },
+    // },
+  };
+});

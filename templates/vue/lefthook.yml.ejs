@@ -1,0 +1,20 @@
+# @file lefthook.yml
+# @ref https://evilmartians.github.io/lefthook/
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*"
+      <%_ if (codeLinter === 'biome') { _%>
+      run: npx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      <%_ } else if (codeLinter === 'eslint') { _%>
+      run: npx eslint --no-error-on-unmatched-pattern --no-color --fix {staged_files}
+      <%_ } _%>
+      stage_fixed: true
+
+commit-msg:
+  parallel: true
+  commands:
+    lint:
+      run: npx commitlint --edit
