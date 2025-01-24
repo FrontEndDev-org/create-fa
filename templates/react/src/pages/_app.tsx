@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router';
-import { NavLink, Outlet } from 'react-router';
+import { NavLink, Outlet, useNavigate } from 'react-router';
 
 const routes = [
   {
