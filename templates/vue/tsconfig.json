@@ -19,7 +19,10 @@
 
     "lib": ["ES2023", "DOM"],
     "types": ["node"],
-    "plugins": []
+    "plugins": [],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
 
   "include": ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.vue"],
