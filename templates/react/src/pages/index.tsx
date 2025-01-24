@@ -8,7 +8,6 @@ export default function Index() {
   const changeNumber = () => {
     const randomNumber = Math.random();
     sampleStore.randomNumber = randomNumber;
-    console.log('randomNumber is', randomNumber);
   };
 
   return (
