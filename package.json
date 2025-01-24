@@ -47,7 +47,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/types": "^19.5.0",
-    "@types/node": "^22.10.9",
+    "@types/node": "^22.10.10",
     "lefthook": "^1.10.10",
     "taze": "^18.3.0",
     "typescript": "^5.7.3",
