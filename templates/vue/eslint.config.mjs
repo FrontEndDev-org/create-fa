@@ -13,9 +13,8 @@ export default antfu(
     vue: true,
     yaml: true,
     unocss: true,
-    typescript: true,
     ignores: [
-      ".*",
+      '**/.*',
       "node_modules",
       "/dist/**",
       "/public/**",

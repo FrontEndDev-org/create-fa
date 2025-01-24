@@ -20,9 +20,9 @@ const ignoreAtRules = [
 export default {
   ignoreFiles: [
     "node_modules",
-    "/dist/**",
-    "/public/**",
-    "/coverage/**",
+    "dist/**",
+    "public/**",
+    "coverage/**",
   ],
 
   extends: [

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "jsxImportSource": "vue",
     "target": "ES2023",
     "module": "ESNext",
