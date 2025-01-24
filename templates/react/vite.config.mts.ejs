@@ -5,6 +5,7 @@
 
 import path from 'node:path/posix';
 import react from '@vitejs/plugin-react';
+import reactRouter from '@generouted/react-router/plugin';
 import uno from 'unocss/vite';
 import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
@@ -48,6 +49,9 @@ export default defineConfig((env) => {
     plugins: [
       tsconfigPaths(),
       react(),
+      reactRouter({
+        output: 'src/.router.ts',
+      }),
       uno(),
       createSvgSpritePlugin({
         iconDirs: path.resolve('src/svg-icons'),
