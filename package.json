@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frontenddev-org/create-proj.git"
+    "url": "git+https://github.com/FrontEndDev-org/create-proj.git"
   },
   "dependencies": {
     "create-creator": "^2.4.0"
