@@ -1,6 +1,7 @@
 /**
  * eslint.config.mjs
  * @ref https://eslint.org/
+ * @ref https://github.com/antfu/eslint-config
  */
 
 import { antfu } from '@antfu/eslint-config';
@@ -8,8 +9,8 @@ import prettierConfig from './prettier.config.mjs';
 
 export default antfu(
   {
-    type: 'lib',
     ignores: [
+      '.*',
       '**/dist/**',
       '**/dist-*/**',
       '**/dist_*/**',
