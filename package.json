@@ -1,7 +1,7 @@
 {
   "name": "create-proj",
-  "version": "1.2.0",
-  "description": "create (F)ront-end (A)pplication - npm create fa",
+  "version": "1.0.0",
+  "description": "create project - npm create proj",
   "scripts": {
     "prepare": "lefthook install",
     "lint": "biome check",
