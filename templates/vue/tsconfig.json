@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "jsxImportSource": "vue",
     "target": "ES2023",
     "module": "ESNext",
-    "jsxImportSource": "vue",
     "moduleResolution": "bundler",
 
     "strict": true,

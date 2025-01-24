@@ -9,12 +9,21 @@ import prettierConfig from './prettier.config.mjs';
 
 export default antfu(
   {
+    type: 'app',
+    vue: true,
+    yaml: true,
+    unocss: true,
+    typescript: true,
     ignores: [
-      '.*',
-      '**/dist/**',
-      '**/dist-*/**',
-      '**/dist_*/**',
-      'coverage/**',
+      ".*",
+      "node_modules",
+      "/dist/**",
+      "/public/**",
+      "/coverage/**",
+      "package.json",
+      "package-lock.json",
+      "pnpm-lock.{yml,yaml}",
+      "yarn.lock"
     ],
     stylistic: {
       semi: prettierConfig.semi,
@@ -32,8 +41,7 @@ export default antfu(
       'unused-imports/no-unused-vars': 'off',
       'no-console': 'off',
     },
-    settings: {
-      'import/core-modules': ['vue-router/auto-routes'],
-    },
   },
 );
+
+
