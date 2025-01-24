@@ -1,11 +1,11 @@
-# create-fa
+# create-proj
 create (F)ront-end (A)pplication - npm create fa
 
 ## Usage
 ```bash
 npm create fa my-app
 
-┌   create-fa@1.0.0
+┌   create-proj@1.0.0
 │
 ●  create (F)ront-end (A)pplication - npm create fa
 │

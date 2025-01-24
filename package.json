@@ -1,5 +1,5 @@
 {
-  "name": "create-fa",
+  "name": "create-proj",
   "version": "1.2.0",
   "description": "create (F)ront-end (A)pplication - npm create fa",
   "scripts": {
@@ -13,7 +13,7 @@
   "sideEffects": false,
   "main": "./dist/index.cjs",
   "bin": {
-    "create-fa": "./bin/index.cjs"
+    "create-proj": "./bin/index.cjs"
   },
   "module": "./dist/index.mjs",
   "exports": {
@@ -31,13 +31,13 @@
   ],
   "keywords": [
     "create-creator",
-    "create-fa"
+    "create-proj"
   ],
   "author": "云淡然 <hi@ydr.me> (https://ydr.me)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frontenddev-org/create-fa.git"
+    "url": "git+https://github.com/frontenddev-org/create-proj.git"
   },
   "dependencies": {
     "create-creator": "^2.4.0"
