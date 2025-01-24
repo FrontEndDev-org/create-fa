@@ -16,7 +16,7 @@ import { pkgDescription, pkgName, pkgVersion } from './const';
 const templates = {
   react: {
     label: 'React',
-    hint: 'React-Router + Vite + Unocss + Valtio',
+    hint: 'React-Router(File-based Routing) + Vite + Unocss + Valtio',
   },
   vue: {
     label: 'Vue3',
@@ -68,7 +68,11 @@ export async function createCLI() {
     prompts.outro('🎉🎉🎉');
   });
 
-  creator.writeIntercept(['*/eslint*', '*/prettier*', '*/_prettier*'], (meta, data) => ({
+  creator.writeIntercept(['*/_gitignore'], (meta) => ({
+    targetFileName: meta.targetFileName.replace('_', '.'),
+  }));
+
+  creator.writeIntercept(['*/*eslint*', '*/*prettier*'], (meta, data) => ({
     disableWrite: data.codeLinter !== 'eslint',
   }));
 
