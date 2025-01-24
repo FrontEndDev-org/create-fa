@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.3.0...v1.4.0) (2025-01-24)
+
+
+### Features
+
+* 优化项目初始化配置和模板描述 ([b9b6511](https://github.com/FrontEndDev-org/create-proj/commit/b9b65115786b04a2256f768830b8d0fecb5072c6))
+* 更新 react 模板 ([ab17927](https://github.com/FrontEndDev-org/create-proj/commit/ab17927685cde8d6a6083c1c953f2b1d90e65c14))
+* 更新 vue 模板 ([5cadd9e](https://github.com/FrontEndDev-org/create-proj/commit/5cadd9e706ef98ac3452d4294985146343293f82))
+
 ## 1.3.0 (2025-01-24)
 
 
