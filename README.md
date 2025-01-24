@@ -1,5 +1,5 @@
 # create-proj
-create (F)ront-end (A)pplication - npm create fa
+create project - npm create proj
 
 ## Usage
 ```bash
@@ -7,7 +7,7 @@ npm create fa my-app
 
 ┌   create-proj@1.0.0
 │
-●  create (F)ront-end (A)pplication - npm create fa
+●  create project - npm create proj
 │
 ◇  Currently using the latest version
 │
@@ -25,7 +25,6 @@ npm create fa my-app
 ◇  Select code linter
 │  biome
 │
-│
 ◆  The project has been created successfully!
 │
 ◆  cd my-app to start your coding journey
@@ -35,32 +34,33 @@ npm create fa my-app
 
 ## Templates
 ### React
-- react@19: [react](https://react.dev/)
-- typescript: [TypeScript](https://www.typescriptlang.org/)
-- build: [vite](https://vite.dev/)
-- router: [react-router](https://reactrouter.com/)
-- css: [unocss](https://unocss.dev/)
-- sass: [sass](https://sass-lang.com/)
-- svg-icons: [vite-svg-sprite](https://www.npmjs.com/package/vite-svg-sprite)
-- store: [valtio](https://valtio.dev/)
-- linter: [biome](https://biomejs.dev/)
-- linter: [eslint](https://eslint.org/)
-- linter: [prettier](https://prettier.io/)
-- linter: [lefthook](https://lefthook.dev/)
-- linter: [commitlint](https://commitlint.js.org/)
+- React@19: [React](https://react.dev/)
+- TypeScript: [TypeScript](https://www.typescriptlang.org/)
+- Builder: [Vite](https://vite.dev/)
+- Router: [React Router](https://reactrouter.com/)
+- File-based routing: [@generouted/react-router](https://github.com/oedotme/generouted)
+- Atomic CSS: [UnoCSS](https://unocss.dev/)
+- Sass: [Sass](https://sass-lang.com/)
+- SVG Icons: [Vite SVG Sprite](https://www.npmjs.com/package/vite-svg-sprite)
+- State Management: [Valtio](https://valtio.dev/)
+- Linter: [Biome](https://biomejs.dev/)
+- Linter: [ESLint](https://eslint.org/)
+- Linter: [Prettier](https://prettier.io/)
+- Linter: [Lefthook](https://lefthook.dev/)
+- Linter: [Commitlint](https://commitlint.js.org/)
 
 ### Vue3
-- vue@3: [vue](https://vuejs.org/)
-- typescript: [TypeScript](https://www.typescriptlang.org/)
-- build: [vite](https://vite.dev/)
-- router: [vue-router](https://router.vuejs.org/)
-- file-based routing: [unplugin-vue-router](https://uvr.esm.is/)
-- css: [unocss](https://unocss.dev/)
-- sass: [sass](https://sass-lang.com/)
-- svg-icons: [vite-svg-sprite](https://www.npmjs.com/package/vite-svg-sprite)
-- store: [pinia](https://pinia.vuejs.org/)
-- linter: [biome](https://biomejs.dev/)
-- linter: [eslint](https://eslint.org/)
-- linter: [prettier](https://prettier.io/)
-- linter: [lefthook](https://lefthook.dev/)
-- linter: [commitlint](https://commitlint.js.org/)
+- Vue@3: [Vue](https://vuejs.org/)
+- TypeScript: [TypeScript](https://www.typescriptlang.org/)
+- Builder: [Vite](https://vite.dev/)
+- Router: [Vue Router](https://router.vuejs.org/)
+- File-based routing: [Unplugin Vue Router](https://uvr.esm.is/)
+- Atomic CSS: [UnoCSS](https://unocss.dev/)
+- Sass: [Sass](https://sass-lang.com/)
+- SVG Icons: [Vite SVG Sprite](https://www.npmjs.com/package/vite-svg-sprite)
+- State Management: [Pinia](https://pinia.vuejs.org/)
+- Linter: [Biome](https://biomejs.dev/)
+- Linter: [ESLint](https://eslint.org/)
+- Linter: [Prettier](https://prettier.io/)
+- Linter: [Lefthook](https://lefthook.dev/)
+- Linter: [Commitlint](https://commitlint.js.org/)
