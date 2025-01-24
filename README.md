@@ -64,3 +64,6 @@ npm create fa my-app
 - Linter: [Prettier](https://prettier.io/)
 - Linter: [Lefthook](https://lefthook.dev/)
 - Linter: [Commitlint](https://commitlint.js.org/)
+
+**TIPS**
+Choose either ESLint or Biome.
