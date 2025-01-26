@@ -2,14 +2,20 @@
 // @ref https://tailwindcss.com/docs/functions-and-directives
 // @ref https://unocss.dev/integrations/postcss
 const ignoreAtRules = [
+  // Tailwindcss v4
+  "theme",
+  "source",
+  "utility",
+  "variant",
+  "custom-variant",
   "apply",
+  "reference",
   "config",
-  "layer",
-  "responsive",
-  "screen",
-  "tailwind",
+  "plugin",
+
+  // Unocss v65
   "unocss",
-  "variants",
+  "screen",
 ];
 
 /**
@@ -19,9 +25,12 @@ const ignoreAtRules = [
  */
 export default {
   ignoreFiles: [
+    // Node
     "node_modules",
+    // Vite
     "dist/**",
     "public/**",
+    // Vitest
     "coverage/**",
   ],
 

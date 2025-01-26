@@ -24,7 +24,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.vue", "src/.router.ts"],
+  "include": ["**/*.ts", "**/.*.ts", "**/*.mts", "**/*.tsx"],
   "exclude": []
 }
 

@@ -26,7 +26,7 @@
     }
   },
 
-  "include": ["**/*.ts", "**/*.mts", "**/*.tsx", "**/*.vue", "src/dts/.typed-router.d.ts"],
+  "include": ["**/*.ts", "**/.*.ts", "**/*.mts", "**/*.tsx", "**/*.vue"],
   "exclude": []
 }
 
