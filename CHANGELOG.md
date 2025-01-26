@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.4.0...v1.5.0) (2025-01-26)
+
+
+### Features
+
+* **react:** 添加 openapi-axios 支持 ([840bfb2](https://github.com/FrontEndDev-org/create-proj/commit/840bfb2181655603b8e6584cdd95b14b26ab35b6))
+* **react:** 添加宠物店 API 示例 ([81a56fc](https://github.com/FrontEndDev-org/create-proj/commit/81a56fcdee27d19637f996806ceb2e8aa4012b9c))
+* **vue:** 添加 OpenAPI 生成的 API 客户端 ([c0316f2](https://github.com/FrontEndDev-org/create-proj/commit/c0316f2eb095f6922395f32802da126e490fce45))
+
 ## [1.4.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.3.0...v1.4.0) (2025-01-24)
 
 
