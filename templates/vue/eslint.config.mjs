@@ -14,15 +14,19 @@ export default antfu(
     yaml: true,
     unocss: true,
     ignores: [
-      '**/.*',
+      // Node
       "node_modules",
-      "/dist/**",
-      "/public/**",
-      "/coverage/**",
       "package.json",
       "package-lock.json",
       "pnpm-lock.{yml,yaml}",
-      "yarn.lock"
+      "yarn.lock",
+      // Dot Files
+      '**/.*',
+      // Vite
+      "/dist/**",
+      "/public/**",
+      // Testing
+      "/coverage/**"
     ],
     stylistic: {
       semi: prettierConfig.semi,

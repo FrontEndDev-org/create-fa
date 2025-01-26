@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 import { useSampleStore } from '../store/sample';
 import SvgIcon from '../svg-icons/SvgIcon.vue';
+import Pets from './components/Pets.vue';
 
 const sample = useSampleStore();
 
@@ -25,5 +25,8 @@ function changeNumber() {
         Random Number
       </button>
     </div>
+
+    <h1 className="text-10">Pets</h1>
+    <Pets />
   </div>
 </template>

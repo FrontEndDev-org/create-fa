@@ -4,6 +4,7 @@
   "description": "A new Vue App - <%= ctx.projectName %>",
   "scripts": {
     "prepare": "lefthook install",
+    "openapi-axios": "openapi-axios",
     <%_ if (codeLinter === 'biome') { _%>
     "lint": "biome check && vue-tsc --noEmit && stylelint '**/*.{css,scss}'",
     "lint:fix": "biome check --fix --unsafe && vue-tsc --noEmit && stylelint '**/*.{css,scss}' --fix",
@@ -22,8 +23,10 @@
   "engineStrict": true,
   "dependencies": {
     "@unocss/reset": "^65.4.3",
+    "axios": "^1.7.9",
     "pinia": "^2.3.1",
     "vue": "^3.5.13",
+    "vue-request": "^2.0.4",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
@@ -46,6 +49,8 @@
     "commit-and-tag-version": "^12.5.0",
     "cross-env": "^7.0.3",
     "lefthook": "^1.10.3",
+    "openapi-axios": "^0.31.0",
+    "postcss": "^8.5.1",
     "sass-embedded": "^1.83.4",
     "stylelint": "^16.13.2",
     "stylelint-config-css-modules": "^4.4.0",
