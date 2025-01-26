@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { sampleStore } from '../store/sample';
 import SvgIcon from '../svg-icons/SvgIcon';
+import Pets from './_components/Pets';
 
 export default function Index() {
   const sample = useSnapshot(sampleStore);
@@ -21,6 +22,9 @@ export default function Index() {
           Random Number
         </button>
       </div>
+
+      <h1 className="text-10">Pets</h1>
+      <Pets />
     </div>
   );
 }

@@ -1,6 +1,6 @@
+import { useNavigate } from '@/.router';
 import { useSnapshot } from 'valtio';
 import { sampleStore } from '../store/sample';
-import { useNavigate } from '@/.router';
 
 export default function About() {
   const sample = useSnapshot(sampleStore);

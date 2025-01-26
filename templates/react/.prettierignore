@@ -30,6 +30,9 @@ yarn.lock
 # dist
 /dist
 
+# Dot files
+**/.*
+
 # testing
 /coverage
 
@@ -38,6 +41,5 @@ yarn.lock
 
 # typescript
 *.tsbuildinfo
-
 
 
