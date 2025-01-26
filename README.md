@@ -1,3 +1,5 @@
+中文 | [English](./README-en.md)
+
 # create-proj
 
 [![npm version](https://img.shields.io/npm/v/create-proj)](https://npmjs.com/package/create-proj)
@@ -11,6 +13,8 @@ npm create proj my-proj
 ┌   create-proj@1.0.0
 │
 ●  create project - npm create proj
+│
+◆  Node.js version 20 is compatible with 18
 │
 ◇  Currently using the latest version
 │
@@ -27,6 +31,10 @@ npm create proj my-proj
 │
 ◇  Select code linter
 │  biome
+│
+◇  Generated project 37 files
+│
+◇  Git repository initialized successfully
 │
 ◆  The project has been created successfully!
 │
@@ -48,6 +56,9 @@ npm create proj my-proj
 | 预处理器 | [Sass](https://sass-lang.com/) | [Sass](https://sass-lang.com/) |
 | SVG 图标 | [Vite SVG Sprite](https://www.npmjs.com/package/vite-svg-sprite) | [Vite SVG Sprite](https://www.npmjs.com/package/vite-svg-sprite) |
 | 状态管理 | [Valtio](https://valtio.dev/) | [Pinia](https://pinia.vuejs.org/) |
+| 接口请求 | [Axios](https://axios-http.com/) | [Axios](https://axios-http.com/) |
+| 接口同步 | [openapi-axios](https://github.com/FrontEndDev-org/openapi-axios) | [openapi-axios](https://github.com/FrontEndDev-org/openapi-axios/) |
+| 接口 Hook | [Ahooks - useRequest](https://ahooks.js.org/) | [Vue-request - useRequest](https://www.attojs.org/) |
 | 格式化 <sup>1</sup> | [Biome](https://biomejs.dev/) | [Biome](https://biomejs.dev/) |
 | 格式化 <sup>1</sup> | [ESLint](https://eslint.org/) | [ESLint](https://eslint.org/) |
 | 格式化 <sup>1</sup> | [Prettier](https://prettier.io/) | [Prettier](https://prettier.io/) |
