@@ -13,7 +13,7 @@ export default function Pets() {
       {pets?.map((pet) => {
         return (
           <li key={pet.id}>
-            <a href={`/pets/${pet.id}`}>{pet.name}</a>
+            {pet.name}
           </li>
         );
       })}
