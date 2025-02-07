@@ -3,19 +3,19 @@
 // @ref https://unocss.dev/integrations/postcss
 const ignoreAtRules = [
   // Tailwindcss v4
-  "theme",
-  "source",
-  "utility",
-  "variant",
-  "custom-variant",
-  "apply",
-  "reference",
-  "config",
-  "plugin",
+  'theme',
+  'source',
+  'utility',
+  'variant',
+  'custom-variant',
+  'apply',
+  'reference',
+  'config',
+  'plugin',
 
   // Unocss v65
-  "unocss",
-  "screen",
+  'unocss',
+  'screen',
 ];
 
 /**
@@ -26,12 +26,12 @@ const ignoreAtRules = [
 export default {
   ignoreFiles: [
     // Node
-    "node_modules",
+    '**/node_modules/**',
     // Vite
-    "dist/**",
-    "public/**",
+    'dist/**',
+    'public/**',
     // Vitest
-    "coverage/**",
+    'coverage/**',
   ],
 
   extends: [
@@ -39,29 +39,24 @@ export default {
     'stylelint-config-recommended-scss',
     'stylelint-config-css-modules',
     'stylelint-config-html',
-    'stylelint-config-html/vue',
+    'stylelint-config-recommended-vue',
+    'stylelint-config-recommended-vue/scss',
   ],
 
   rules: {
-    // 源可以为空
+    // @ref https://stylelint.io/user-guide/rules/no-empty-source/
     'no-empty-source': null,
-
-    // 样式类名：无规则限制
+    // @ref https://stylelint.io/user-guide/rules/selector-class-pattern/
     'selector-class-pattern': null,
-
-    // 不接受无效属性值
-    'declaration-property-value-no-unknown': true,
-
-    // 不需要要求声明倒序
+    // @ref https://stylelint.io/user-guide/rules/no-descending-specificity/
     'no-descending-specificity': null,
 
+    // tailwind
     // @ref https://stylelint.io/user-guide/rules/at-rule-no-unknown/
     'at-rule-no-unknown': [true, { ignoreAtRules }],
     // @ref https://stylelint.io/user-guide/rules/at-rule-no-deprecated/
     'at-rule-no-deprecated': [true, { ignoreAtRules }],
   },
 };
-
-
 
 
