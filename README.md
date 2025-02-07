@@ -6,7 +6,7 @@
 
 create project - npm create proj
 
-## Usage
+## 使用
 ```bash
 npm create proj my-proj
 
@@ -43,7 +43,7 @@ npm create proj my-proj
 └  🎉🎉🎉
 ```
 
-## Templates
+## 模板
 
 | 模板 | React | Vue |
 |------|-------|-----|
