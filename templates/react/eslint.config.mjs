@@ -14,19 +14,19 @@ export default antfu(
     yaml: true,
     unocss: true,
     ignores: [
-      // Node
-      "node_modules",
+      // node
+      "**/node_modules/**",
       "package.json",
       "package-lock.json",
       "pnpm-lock.{yml,yaml}",
       "yarn.lock",
-      // Dot Files
+      // vite
+      "dist/**",
+      "public/**",
+      // vitest
+      "coverage/**",
+      // dot files
       '**/.*',
-      // Vite
-      "/dist/**",
-      "/public/**",
-      // Testing
-      "/coverage/**"
     ],
     stylistic: {
       semi: prettierConfig.semi,
@@ -35,16 +35,15 @@ export default antfu(
     },
     typescript: {
       overrides: {
-        'ts/explicit-function-return-type': ['off'],
+        'ts/explicit-function-return-type': 'off',
         'ts/no-require-imports': 'off',
       },
     },
     rules: {
-      'unused-imports/no-unused-imports': 'off',
       'unused-imports/no-unused-vars': 'off',
-      'no-console': 'off',
+      'no-unused-vars': 'off',
+      'no-console': 'off',    },
     },
-  },
 );
 
 
