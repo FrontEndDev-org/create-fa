@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.5.0...v1.6.0) (2025-02-07)
+
+
+### Features
+
+* **react:** 优化代码格式和 lint 配置 ([8ca3519](https://github.com/FrontEndDev-org/create-proj/commit/8ca351979cb10dd8cd5d85e8d270460cb0c52c2e))
+* **vue:** 优化代码格式化和 lint 配置 ([a9d1eba](https://github.com/FrontEndDev-org/create-proj/commit/a9d1eba8f9416258a2795fc13084cd5e73bc90d3))
+
 ## [1.5.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.4.0...v1.5.0) (2025-01-26)
 
 
