@@ -29,6 +29,7 @@ export default {
     '**/node_modules/**',
     // Vite
     'dist/**',
+    'dist-*/**',
     'public/**',
     // Vitest
     'coverage/**',

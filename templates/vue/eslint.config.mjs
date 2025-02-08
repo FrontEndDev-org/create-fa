@@ -22,6 +22,7 @@ export default antfu(
       "yarn.lock",
       // vite
       "dist/**",
+      "dist-*/**",
       "public/**",
       // vitest
       "coverage/**",
