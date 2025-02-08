@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.6.0...v1.7.0) (2025-02-08)
+
+
+### Features
+
+* **react:** 忽略 dist- 开头的目录 ([673c222](https://github.com/FrontEndDev-org/create-proj/commit/673c2227a4c4beb0d0fa6e26e94008193b704082))
+* **vue:** 忽略 dist-* 目录 ([a804f45](https://github.com/FrontEndDev-org/create-proj/commit/a804f450fecf785f6a7f20a7a7a49836e8199251))
+
 ## [1.6.0](https://github.com/FrontEndDev-org/create-proj/compare/v1.5.0...v1.6.0) (2025-02-07)
 
 
