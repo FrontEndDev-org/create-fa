@@ -32,6 +32,7 @@ yarn.lock
 
 # Vite
 /dist
+/dist-*
 /public
 
 # Vitest

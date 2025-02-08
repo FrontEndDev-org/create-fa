@@ -27,6 +27,7 @@ node_modules
 
 # Vite
 /dist
+/dist-*
 
 # Vitest
 /coverage
